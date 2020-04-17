@@ -3,15 +3,31 @@ const db = require("../db-config");
 module.exports = {
   getRecipes,
   getShoppingList,
+  getInstructions,
+  getAllRecipesByIngredient,
 };
 
 function getRecipes() {
-  return db("dishes");
+  return db("recipe");
 }
 
-function getShoppingList(dish_id) {
-  return db("recipes")
-    .where({ dish_id })
-    .join("ingredients", "ingredients.id", "recipes.ingredient_id")
-    .select("ingredients.id", "quantity", "ingredients.name");
+function getShoppingList(recipe_id) {
+  return db("recipe_detail")
+    .where({ recipe_id })
+    .join("ingredient", "ingredient.id", "=", "ingredient_id")
+    .select("ingredient_id", "quantity", "name as ingredient_name");
+}
+
+function getInstructions(recipe_id) {
+  return db("instruction")
+    .where({ recipe_id })
+    .select("id", "text")
+    .orderBy("step_number", "asc");
+}
+
+function getAllRecipesByIngredient(ingredient_id) {
+  return db("recipe_detail")
+    .where({ ingredient_id })
+    .join("recipe", "recipe_id", "recipe.id")
+    .select("recipe.name", "recipe.id");
 }
