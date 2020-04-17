@@ -13,7 +13,7 @@ exports.up = function (knex) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("recipe")
+        .inTable("dishes")
         .onUpdate("CASCADE")
         .onDelete("CASCADE"); //the app doesn't need instructions if the dish is deleted.
       table.unique(["step_number", "dish_id"]); //one recipe can have only one first, one second step etc.
