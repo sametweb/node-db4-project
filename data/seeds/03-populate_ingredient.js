@@ -5,16 +5,17 @@ exports.seed = function (knex) {
     .then(function () {
       // Inserts seed entries
       return knex("ingredient").insert([
-        { name: "cheese" },
-        { name: "tomato sauce" },
-        { name: "mushroom" },
-        { name: "flour" },
-        { name: "water" },
-        { name: "salt" },
-        { name: "pepperoni" },
-        { name: "green pepper" },
-        { name: "onion" },
-        { name: "egg" },
+        { name: "Cheese" },
+        { name: "Tomato sauce" },
+        { name: "Mushroom" },
+        { name: "Flour" },
+        { name: "Water" },
+        { name: "Salt" },
+        { name: "Pepperoni" },
+        { name: "Green pepper" },
+        { name: "Onion" },
+        { name: "Egg" },
+        { name: "Yeast" },
       ]);
     });
 };

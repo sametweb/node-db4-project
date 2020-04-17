@@ -4,6 +4,10 @@ exports.seed = function (knex) {
     .truncate()
     .then(function () {
       // Inserts seed entries
-      return knex("recipe").insert([{ name: "Pizza" }, { name: "Menemen" }]);
+      return knex("recipe").insert([
+        { name: "Pizza" },
+        { name: "Menemen" },
+        { name: "Bread" },
+      ]);
     });
 };

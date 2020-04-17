@@ -15,6 +15,10 @@ exports.seed = function (knex) {
         { quantity: "2 middle size", ingredient_id: 8, recipe_id: 2 },
         { quantity: "1 middle size", ingredient_id: 9, recipe_id: 2 },
         { quantity: "3", ingredient_id: 10, recipe_id: 2 },
+        { quantity: "1 pack", ingredient_id: 11, recipe_id: 3 },
+        { quantity: "3 cups", ingredient_id: 4, recipe_id: 3 },
+        { quantity: "1.5 cups", ingredient_id: 5, recipe_id: 3 },
+        { quantity: "1 teaspoon", ingredient_id: 6, recipe_id: 3 },
       ]);
     });
 };
