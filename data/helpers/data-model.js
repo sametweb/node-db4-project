@@ -21,7 +21,7 @@ function getShoppingList(recipe_id) {
 function getInstructions(recipe_id) {
   return db("instruction")
     .where({ recipe_id })
-    .select("id", "text")
+    .select("step_number", "text")
     .orderBy("step_number", "asc");
 }
 
@@ -29,5 +29,5 @@ function getAllRecipesByIngredient(ingredient_id) {
   return db("recipe_detail")
     .where({ ingredient_id })
     .join("recipe", "recipe_id", "recipe.id")
-    .select("recipe.name", "recipe.id");
+    .select("recipe_id", "recipe.name");
 }
